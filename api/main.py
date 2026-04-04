@@ -5,7 +5,7 @@ main.py — FastAPI backend for the Movie Recommender.
 import json
 import os
 from contextlib import asynccontextmanager
-from typing import Any
+from typing import Any, Optional
 
 import httpx
 from fastapi import FastAPI, HTTPException
@@ -15,7 +15,7 @@ from pydantic import BaseModel
 from recommender import Recommender
 
 # ─── Globals ────────────────────────────────────────────────────────────────
-recommender: Recommender | None = None
+recommender: Optional[Recommender] = None
 cluster_viz: list[dict] = []
 
 TMDB_API_KEY = os.getenv("TMDB_API_KEY", "")
@@ -66,7 +66,7 @@ class RecommendRequest(BaseModel):
 
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
-async def fetch_poster(title: str, tmdb_id: int | None = None) -> str:
+async def fetch_poster(title: str, tmdb_id: Optional[int] = None) -> str:
     """
     Try to get a poster URL:
       1. OMDb free endpoint (works without an API key for most titles)
