@@ -12,6 +12,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+# Ensure we can import sibling files regardless of execution directory
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from recommender import Recommender
 
 # ─── Globals ────────────────────────────────────────────────────────────────
