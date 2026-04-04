@@ -8,7 +8,7 @@ env/
 
 # Data and Models
 # (We keep data/tmdb_5000_movies.csv because it's only 5.6MB and Render needs it)
-backend/models/*.pkl
+# We also include backend/models/*.pkl for Vercel since Vercel does not train the model on deploy
 
 # Frontend Node/React
 frontend/node_modules/
