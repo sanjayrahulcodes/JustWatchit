@@ -1,12 +1,19 @@
 {
-  "rewrites": [
+  "functions": {
+    "api/main.py": {
+      "runtime": "python3.10",
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
+  "routes": [
     {
-      "source": "/(health|clusters|recommend)",
-      "destination": "/api/index"
+      "src": "/(health|clusters|recommend(.*))",
+      "dest": "/api/main.py"
     },
     {
-      "source": "/(.*)",
-      "destination": "/frontend/dist/$1"
+      "src": "/(.*)",
+      "dest": "/frontend/dist/$1"
     }
   ]
 }
