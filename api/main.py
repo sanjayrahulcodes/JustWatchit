@@ -46,7 +46,9 @@ async def lifespan(app: FastAPI):
 
 
 # ─── App ─────────────────────────────────────────────────────────────────────
-app = FastAPI(title="Movie Recommender API", lifespan=lifespan)
+app = FastAPI()
+app.title = "Movie Recommender API"
+app.router.lifespan_context = lifespan
 
 app.add_middleware(
     CORSMiddleware,
