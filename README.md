@@ -87,8 +87,8 @@ The codebase has already been fully optimized for production deployment, complet
 ### Deploy the Backend to Render.com
 Render natively supports Python applications and handles our ML model installation automatically.
 1. Connect this repo to **Render.com** (New > Web Service)
-2. Use **Build Command**: `pip install -r requirements.txt && cd backend && python train_model.py`
-3. Use **Start Command**: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+2. Use **Build Command**: `pip install -r requirements.txt && cd api && python train_model.py`
+3. Use **Start Command**: `uvicorn api.main:app --host 0.0.0.0 --port $PORT`
 
 ### Deploy the Frontend to Netlify
 1. Connect this repo to **Netlify**
