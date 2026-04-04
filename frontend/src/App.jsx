@@ -4,7 +4,8 @@ import ResultCard from './components/ResultCard'
 import HowItWorks from './components/HowItWorks'
 import WatchList from './components/WatchList'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const RAW_API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_BASE = RAW_API_BASE.replace(/\/+$/, '')
 
 const WATCHLIST_KEY = 'jwi_watchlist'
 
