@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0f1117;
+    --surface: #161b27;
+    --border: #1e2535;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #7c6ff7;
+  }
+
+  .light {
+    --bg: #f0f4ff;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --muted: #64748b;
+    --accent: #7c6ff7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(22, 27, 39, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .light .glass {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .step-connector {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #7c6ff7 0%, #1e2535 100%);
+  }
+
+  .step-active {
+    background: linear-gradient(135deg, #7c6ff7 0%, #a89af9 100%);
+    box-shadow: 0 0 20px rgba(124, 111, 247, 0.4);
+  }
+
+  .step-inactive {
+    background: #1e2535;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7c6ff7;
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #7c6ff7, #a89af9, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-accent-glow {
+    border-color: #7c6ff7;
+    box-shadow: 0 0 12px rgba(124, 111, 247, 0.25);
+  }
+}
