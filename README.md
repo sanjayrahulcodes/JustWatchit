@@ -14,11 +14,6 @@
   A full-stack web application powered by Unsupervised Machine Learning.
 </p>
 
-<p align="center">
-  <a href="https://just-watch-it.netlify.app/">https://just-watch-it.netlify.app/</a><br>
-  paste this to access this https://github.com/sanjayrahulcodes/JustWatchit
-</p>
-
 ---
 
 ## ✨ Features
